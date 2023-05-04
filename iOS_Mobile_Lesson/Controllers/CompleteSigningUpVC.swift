@@ -23,6 +23,10 @@ class CompleteSigningUpVC: UIViewController {
     @IBOutlet weak var surnameTF: UITextField!
     
     @IBOutlet weak var completeSigningUpBtn: UIButton!
+    
+    
+    @IBOutlet weak var agreementsLabel: UILabel!
+    
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     var timer : Timer?
     var countDown : Double = 3
@@ -71,7 +75,7 @@ class CompleteSigningUpVC: UIViewController {
     
     @objc
     func countDownDecrease(_ sender : Timer){
-        if countDown >= 0 {
+        if countDown > 0 {
             
             let message = sender.userInfo as! String
             

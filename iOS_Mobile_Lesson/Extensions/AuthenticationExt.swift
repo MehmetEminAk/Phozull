@@ -89,20 +89,13 @@ extension AuthenticationVC {
    
     func isRememberMeEnabled() {
         
-        switch rememberMeCheckBox.backgroundColor! {
-        case .lightGray :
-            
-            UserDefaults.standard.set(false, forKey: "rememberMe")
-            UserDefaults.standard.synchronize()
-            
-        case .systemBlue :
-            
+        
+        if rememberMeCheckBox.backgroundColor == .blue {
             UserDefaults.standard.set(true, forKey: "rememberMe")
             UserDefaults.standard.synchronize()
-            
-        default:
-            print("Unknown error!")
         }
+        
+        print(UserDefaults.standard.bool(forKey: "rememberMe"))
     }
     
     func isValidEmail(_ email: String) -> Bool {

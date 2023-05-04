@@ -28,6 +28,13 @@
 		D000876C29FFFE79009C29F8 /* SharePhozullVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000876B29FFFE79009C29F8 /* SharePhozullVM.swift */; };
 		D000876E2A0009D6009C29F8 /* SharePhozullExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000876D2A0009D6009C29F8 /* SharePhozullExt.swift */; };
 		D00087702A00114A009C29F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D000876F2A00114A009C29F8 /* Constants.swift */; };
+		D0054D282A03AA8C00CF331E /* MyPhozullCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D272A03AA8C00CF331E /* MyPhozullCVC.swift */; };
+		D0054D2A2A03B29F00CF331E /* MyPersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D292A03B29F00CF331E /* MyPersonalData.swift */; };
+		D0054D2C2A03BC8E00CF331E /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D2B2A03BC8E00CF331E /* CommentsVC.swift */; };
+		D0054D2E2A03BCBB00CF331E /* CommentsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D2D2A03BCBB00CF331E /* CommentsVM.swift */; };
+		D0054D302A03C04F00CF331E /* CommentsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D2F2A03C04F00CF331E /* CommentsExt.swift */; };
+		D0054D322A03C1E400CF331E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D312A03C1E400CF331E /* Comment.swift */; };
+		D0054D342A03C28F00CF331E /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0054D332A03C28F00CF331E /* CommentTVC.swift */; };
 		D0178D2D29FA816B00C5ABA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0178D2C29FA816B00C5ABA6 /* AppDelegate.swift */; };
 		D0178D2F29FA816B00C5ABA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0178D2E29FA816B00C5ABA6 /* SceneDelegate.swift */; };
 		D0178D3129FA816B00C5ABA6 /* AuthenticationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0178D3029FA816B00C5ABA6 /* AuthenticationVC.swift */; };
@@ -80,6 +87,13 @@
 		D000876B29FFFE79009C29F8 /* SharePhozullVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhozullVM.swift; sourceTree = "<group>"; };
 		D000876D2A0009D6009C29F8 /* SharePhozullExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhozullExt.swift; sourceTree = "<group>"; };
 		D000876F2A00114A009C29F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0054D272A03AA8C00CF331E /* MyPhozullCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhozullCVC.swift; sourceTree = "<group>"; };
+		D0054D292A03B29F00CF331E /* MyPersonalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPersonalData.swift; sourceTree = "<group>"; };
+		D0054D2B2A03BC8E00CF331E /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		D0054D2D2A03BCBB00CF331E /* CommentsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVM.swift; sourceTree = "<group>"; };
+		D0054D2F2A03C04F00CF331E /* CommentsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsExt.swift; sourceTree = "<group>"; };
+		D0054D312A03C1E400CF331E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		D0054D332A03C28F00CF331E /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		D0178D2929FA816B00C5ABA6 /* iOS_Mobile_Lesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Mobile_Lesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0178D2C29FA816B00C5ABA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0178D2E29FA816B00C5ABA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +163,7 @@
 				D000876029FC3BC3009C29F8 /* ProfileExt.swift */,
 				D000876429FC52DC009C29F8 /* CurrentDate.swift */,
 				D000876D2A0009D6009C29F8 /* SharePhozullExt.swift */,
+				D0054D2F2A03C04F00CF331E /* CommentsExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				D000875B29FC0CBE009C29F8 /* Phozull.swift */,
+				D0054D292A03B29F00CF331E /* MyPersonalData.swift */,
+				D0054D312A03C1E400CF331E /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +236,7 @@
 				D000875629FC09C3009C29F8 /* FeedVM.swift */,
 				D000876229FC3C39009C29F8 /* ProfileVM.swift */,
 				D000876B29FFFE79009C29F8 /* SharePhozullVM.swift */,
+				D0054D2D2A03BCBB00CF331E /* CommentsVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -231,6 +249,7 @@
 				D000874E29FBC931009C29F8 /* ProfileVC.swift */,
 				D000875229FC08E0009C29F8 /* FeedVC.swift */,
 				D000876929FFFE4B009C29F8 /* SharePhozullVC.swift */,
+				D0054D2B2A03BC8E00CF331E /* CommentsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +260,8 @@
 				D0178D3A29FA816F00C5ABA6 /* LaunchScreen.storyboard */,
 				D0178D3229FA816B00C5ABA6 /* Main.storyboard */,
 				D000875829FC0B70009C29F8 /* PhozullsTVC.swift */,
+				D0054D272A03AA8C00CF331E /* MyPhozullCVC.swift */,
+				D0054D332A03C28F00CF331E /* CommentTVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,6 +413,8 @@
 				D000875529FC093D009C29F8 /* FeedExt.swift in Sources */,
 				D00087702A00114A009C29F8 /* Constants.swift in Sources */,
 				D000874F29FBC931009C29F8 /* ProfileVC.swift in Sources */,
+				D0054D322A03C1E400CF331E /* Comment.swift in Sources */,
+				D0054D2A2A03B29F00CF331E /* MyPersonalData.swift in Sources */,
 				D0178D3129FA816B00C5ABA6 /* AuthenticationVC.swift in Sources */,
 				D000876E2A0009D6009C29F8 /* SharePhozullExt.swift in Sources */,
 				D000875929FC0B70009C29F8 /* PhozullsTVC.swift in Sources */,
@@ -399,17 +422,22 @@
 				D000874529FAF5B4009C29F8 /* AuthenticationExt.swift in Sources */,
 				D000875729FC09C3009C29F8 /* FeedVM.swift in Sources */,
 				D000875C29FC0CBE009C29F8 /* Phozull.swift in Sources */,
+				D0054D342A03C28F00CF331E /* CommentTVC.swift in Sources */,
 				D000874929FAFF2F009C29F8 /* GeneralExt.swift in Sources */,
 				D000874D29FBB133009C29F8 /* CompleteSignUpExt.swift in Sources */,
 				D000874729FAFD24009C29F8 /* CompleteSigningUpVC.swift in Sources */,
 				D0178D2D29FA816B00C5ABA6 /* AppDelegate.swift in Sources */,
+				D0054D282A03AA8C00CF331E /* MyPhozullCVC.swift in Sources */,
 				D0178D2F29FA816B00C5ABA6 /* SceneDelegate.swift in Sources */,
+				D0054D302A03C04F00CF331E /* CommentsExt.swift in Sources */,
 				D000876529FC52DC009C29F8 /* CurrentDate.swift in Sources */,
 				D000876A29FFFE4B009C29F8 /* SharePhozullVC.swift in Sources */,
+				D0054D2C2A03BC8E00CF331E /* CommentsVC.swift in Sources */,
 				D000876129FC3BC3009C29F8 /* ProfileExt.swift in Sources */,
 				D0178D3729FA816B00C5ABA6 /* iOS_Mobile_Lesson.xcdatamodeld in Sources */,
 				D000874229FAF41B009C29F8 /* AuthenticationVM.swift in Sources */,
 				D000876329FC3C39009C29F8 /* ProfileVM.swift in Sources */,
+				D0054D2E2A03BCBB00CF331E /* CommentsVM.swift in Sources */,
 				D000876C29FFFE79009C29F8 /* SharePhozullVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

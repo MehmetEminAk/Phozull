@@ -23,13 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let rememberMe = UserDefaults.standard.bool(forKey: "rememberMe")
         
-        if Auth.auth().currentUser != nil  {
+        if Auth.auth().currentUser != nil && rememberMe {
             window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedVC")
             window?.makeKeyAndVisible()
         } else {
             window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             window?.makeKeyAndVisible()
-        }
+       }
         
         
     }

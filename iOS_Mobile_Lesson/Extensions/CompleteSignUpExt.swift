@@ -20,7 +20,14 @@ extension CompleteSigningUpVC : UIImagePickerControllerDelegate , UINavigationCo
         view.addGestureRecognizer(gesture)
         completeSigningUpBtn.isEnabled = false
         
+        let openAgreementsGesture = UITapGestureRecognizer(target: self, action: #selector(openAgrrements))
+        agreementsLabel.addGestureRecognizer(openAgreementsGesture)
         
+    }
+    
+    @objc
+    func openAgrrements(){
+        performSegue(withIdentifier: "toAgreements", sender: nil)
     }
     
     @objc

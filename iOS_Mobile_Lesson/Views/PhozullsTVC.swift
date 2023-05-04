@@ -55,6 +55,8 @@ class PhozullTVC: UITableViewCell {
         profileImage.layer.cornerRadius = 25
         profileImage.layer.borderColor = UIColor.black.cgColor
         
+        commentsString.isUserInteractionEnabled = true
+        commentButton.isUserInteractionEnabled = true
         
     }
     
@@ -62,19 +64,17 @@ class PhozullTVC: UITableViewCell {
     
      func addGestures(){
          
-         let commentGesture = UITapGestureRecognizer(target: self, action: #selector(commentClicked(_:)))
-         commentButton.addGestureRecognizer(commentGesture)
-        
          let likeGesture = UITapGestureRecognizer(target: self, action: #selector(likeClicked(_:)))
          likeButton.addGestureRecognizer(likeGesture)
          
          let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTapped(_:)))
          doubleTapGesture.numberOfTapsRequired = 2
          phozullPicture.addGestureRecognizer(doubleTapGesture)
-            
+         
     }
     
-
+   
+    
     @objc
     func doubleTapped(_ sender : UITapGestureRecognizer){
         if likeButton.image == UIImage(systemName: "heart") {
@@ -91,12 +91,6 @@ class PhozullTVC: UITableViewCell {
         
     }
     
-    
-    
-    @objc
-    func commentClicked(_ sender : UIImageView){
-       
-    }
     
     @objc
     func likeClicked(_ sender : UITapGestureRecognizer){
