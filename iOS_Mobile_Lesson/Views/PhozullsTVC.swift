@@ -52,11 +52,27 @@ class PhozullTVC: UITableViewCell {
         self.commentsString.text = "\(phozull.commentCount!) tane yorumun hepsini gör"
         self.commentsLabel.text = "\(phozull.commentCount!)"
         self.likesLabel.text = "\(phozull.likeCount!)"
-        profileImage.layer.cornerRadius = 25
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.layer.borderColor = UIColor.black.cgColor
         
         commentsString.isUserInteractionEnabled = true
         commentButton.isUserInteractionEnabled = true
+        
+        db.collection("Posts").whereField("phozulId", isEqualTo: phozull.phozullId).getDocuments { querySnap, err in
+            let doc = querySnap?.documents.first
+            doc?.reference.collection("Likes").whereField("likeOwner", isEqualTo: currentUserId).getDocuments(completion: { snap, err in
+                print(snap?.documents.count)
+                if snap?.documents.count == 0 {
+                    DispatchQueue.main.async {
+                        self.likeButton.image = UIImage(systemName: "heart")
+                    }
+                }else if snap?.documents.count == 1 {
+                    DispatchQueue.main.async {
+                        self.likeButton.image = UIImage(systemName: "heart.fill")
+                    }
+                }
+            })
+        }
         
     }
     
@@ -124,26 +140,46 @@ class PhozullTVC: UITableViewCell {
 
     func likePost(){
         db.collection("Posts").whereField("phozulId", isEqualTo: phozull?.phozullId).getDocuments { query, err in
+            
+            guard let _ = currentUserId else { return }
             let doc = query?.documents.first
-            let likeCount = doc!.data()["likeCount"]
-            doc?.reference.updateData(["likeCount" : likeCount as! Int + 1],completion: { err in
+            
+            doc!.reference.collection("Likes").whereField("likeOwner", isEqualTo: currentUserId).getDocuments(completion: { querySnap, err in
                 if err != nil {
                     print(err!.localizedDescription)
+                    
                 }
+                
+                if querySnap?.documents.count == 0 {
+                    //If you are not in the  users who are liked this post , like it
+                    doc?.reference.collection("Likes").addDocument(data: ["likeOwner" : currentUserId])
+                    
+                }
+                
             })
+          
         }
     }
     
     func disLikePost(){
+        guard let _ = currentUserId else { return }
         db.collection("Posts").whereField("phozulId", isEqualTo: phozull?.phozullId).getDocuments { query, err in
             let doc = query?.documents.first
             
-            let likeCount = doc?.data()["likeCount"]
-            doc?.reference.updateData(["likeCount" : likeCount as! Int - 1],completion: { err in
+            doc?.reference.collection("Likes").whereField("likeOwner", isEqualTo: currentUserId!).getDocuments(completion: { querySnap, err in
+                
                 if err != nil {
-                    print(err!.localizedDescription)
+                    print(err?.localizedDescription)
+                }else {
+                    //If you liked before ,unlike it
+                    if querySnap?.documents.count == 1 {
+                        let doc = querySnap?.documents.first
+                        
+                        doc?.reference.delete()
+                    }
                 }
             })
+            
         }
     }
     

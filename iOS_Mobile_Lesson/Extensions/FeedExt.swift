@@ -23,6 +23,7 @@ extension FeedVC : UITableViewDelegate , UITableViewDataSource {
         cell.phozullPicture.kf.setImage(with: URL(string: feedVM.phozulls[indexPath.row].image!))
         
         cell.commentsString.tag = indexPath.row
+        cell.commentButton.tag = indexPath.row + 500
         
         let commentsStringGesture = UITapGestureRecognizer(target: self, action: #selector(commentClicked(_:)))
         let commentBtnGesture = UITapGestureRecognizer(target: self, action: #selector(commentClicked(_:)))
@@ -42,13 +43,28 @@ extension FeedVC : UITableViewDelegate , UITableViewDataSource {
     @objc
     func commentClicked(_ sender : UITapGestureRecognizer){
         
-        let label = sender.view as! UILabel
-        print(label)
-        print(label.tag)
-        dump(feedVM.phozulls)
-        let phozullId = feedVM.phozulls[label.tag].phozullId
-        performSegue(withIdentifier: "toPhozullComments", sender: phozullId)
+        
+        
+        if sender.view is UILabel {
+            
+            let label = sender.view as! UILabel
+            let phozullId = feedVM.phozulls[label.tag].phozullId
+            performSegue(withIdentifier: "toPhozullComments", sender: phozullId)
+        }
+        
+        else if sender.view is UIImageView {
+            let image = sender.view as! UIImageView
+            
+            let phozullId = feedVM.phozulls[(image.tag-500)].phozullId
+            performSegue(withIdentifier: "toPhozullComments", sender: phozullId)
+           
+        }
+        
+        
     }
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPhozullComments" {

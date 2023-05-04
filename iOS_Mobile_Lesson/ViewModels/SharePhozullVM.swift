@@ -44,8 +44,7 @@ class SharePhozullVM {
                     "createDate" : presentTimeStamp ,
                     "phozullUrl" : url!.absoluteString,
                     "phozullOwner" : self.currentUserId!,
-                    "phozulId" : UUID().uuidString,
-                    "likeCount" : 0 ]) { err in
+                    "phozulId" : UUID().uuidString]) { err in
                         if err != nil {
                             completion(err?.localizedDescription)
                         }else {

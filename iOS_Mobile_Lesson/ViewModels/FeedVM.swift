@@ -31,9 +31,8 @@ class FeedVM  {
             snapshot?.documents.forEach({ postDocument in
                 let phozullOwner = postDocument.data()["phozullOwner"] as! String
                 let phozullUrl = postDocument.data()["phozullUrl"] as! String
-                
-                let likeCount = postDocument.data()["likeCount"] as! Int
-                
+        
+        
                 let id = postDocument.data()["phozulId"] as! String
                 
                 postDocument.reference.collection("Comments").getDocuments { snap, err in
@@ -46,8 +45,14 @@ class FeedVM  {
                         let profilePic = userDocRef?.data()["profilePicUrl"] as! String
                     
                         
-                        self.phozulls.append(Phozull(image: phozullUrl , ownerUserName : userName, ownerProfilePic: profilePic , likeCount: likeCount , commentCount: commentCount , commentCountText: 10, phozullId: id))
-                        self.delegate?.updateUI()
+                        postDocument.reference.collection("Likes").getDocuments { querySnap, err in
+                            let likesCount = querySnap?.documents.count
+                            
+                            self.phozulls.append(Phozull(image: phozullUrl , ownerUserName : userName, ownerProfilePic: profilePic , likeCount: likesCount , commentCount: commentCount , commentCountText: 10, phozullId: id))
+                            self.delegate?.updateUI()
+                        }
+                        
+                        
 
                     }
                 }
